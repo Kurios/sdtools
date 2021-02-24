@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row table-secondary">
+        <div class="col"><h1>Banned</h1><i>Banned divs may end up in E from lack of play as they were banned over 50% of the time.</i></div>
+    </div>
+    <div class="row table-dark">
+        <div class ="col-auto" *ngFor="let div of getDivs(0)">
+            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top"
+            ngbPopover="{{div.name}}">
+        </div>
+    </div>
+    <div class="row table-secondary">
+        <div class="col"><h1>A</h1></div>
+    </div>
+    <div class="row table-dark">
+        <div class ="col-auto" *ngFor="let div of getDivs(1)">
+            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
+            ngbPopover="{{div.name}}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"><h1>B</h1></div>
+    </div>
+    <div class="row table-dark">
+        <div class ="col-auto" *ngFor="let div of getDivs(2)">
+            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
+            ngbPopover="{{div.name}}">
+        </div>
+    </div>
+    <div class="row table-secondary">
+        <div class="col"><h1>C</h1></div>
+    </div>
+    <div class="row table-dark">
+        <div class ="col-auto" *ngFor="let div of getDivs(3)">
+            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
+            ngbPopover="{{div.name}}">
+        </div>
+    </div>
+    <div class="row table-secondary">
+        <div class="col"><h1>D</h1></div>
+    </div>
+    <div class="row table-dark">
+        <div class ="col-auto" *ngFor="let div of getDivs(4)">
+            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top"  style="{{banStyle(div)}}"
+            ngbPopover="{{div.name}}">
+        </div>
+    </div>
+    <div class="row table-secondary">
+        <div class="col"><h1>E</h1></div>
+    </div>
+    <div class="row table-dark">
+        <div class ="col-auto" *ngFor="let div of getDivs(5)">
+            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
+            ngbPopover="{{div.name}}">
+        </div>
+    </div>
+</div>

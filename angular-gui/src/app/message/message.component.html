@@ -1,0 +1,23 @@
+<div *ngIf="message.content.length > 0">
+    {{message.content}}
+</div>
+<div *ngIf="message.hasRadio">
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="message.radioValue">
+        <div *ngFor="let v of message.radioValues">
+            <label ngbButtonLabel class="btn-primary"> 
+                <input ngbButton type="radio" [value]=v [disabled]=message.lock> {{v}}
+            </label>
+        </div>
+    </div>
+</div>
+<div *ngIf="message.hasBanPick">
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="banpickBasic">
+        <div *ngFor="let v of message.banValues; index as i; trackByFn">
+            <label ngbButtonLabel class="btn-primary"> 
+                <input ngbButton type="checkbox" [(ngModel)]=v.selected [disabled]=message.lock> {{v.name}}
+            </label>
+        </div>
+    </div>
+    <br/>
+    <button class = "btn btn-primary" (click)="banSubmit()" >Submit</button>
+</div>
