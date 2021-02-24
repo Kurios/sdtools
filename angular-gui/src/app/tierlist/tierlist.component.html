@@ -1,56 +1,95 @@
-<div class="container">
-    <div class="row table-secondary">
-        <div class="col"><h1>Banned</h1><i>Banned divs may end up in E from lack of play as they were banned over 50% of the time.</i></div>
-    </div>
-    <div class="row table-dark">
-        <div class ="col-auto" *ngFor="let div of getDivs(0)">
-            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top"
-            ngbPopover="{{div.name}}">
-        </div>
-    </div>
-    <div class="row table-secondary">
-        <div class="col"><h1>A</h1></div>
-    </div>
-    <div class="row table-dark">
-        <div class ="col-auto" *ngFor="let div of getDivs(1)">
-            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
-            ngbPopover="{{div.name}}">
-        </div>
-    </div>
+<div class="container col-lg-">
     <div class="row">
-        <div class="col"><h1>B</h1></div>
-    </div>
-    <div class="row table-dark">
-        <div class ="col-auto" *ngFor="let div of getDivs(2)">
-            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
-            ngbPopover="{{div.name}}">
-        </div>
-    </div>
-    <div class="row table-secondary">
-        <div class="col"><h1>C</h1></div>
-    </div>
-    <div class="row table-dark">
-        <div class ="col-auto" *ngFor="let div of getDivs(3)">
-            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
-            ngbPopover="{{div.name}}">
-        </div>
-    </div>
-    <div class="row table-secondary">
-        <div class="col"><h1>D</h1></div>
-    </div>
-    <div class="row table-dark">
-        <div class ="col-auto" *ngFor="let div of getDivs(4)">
-            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top"  style="{{banStyle(div)}}"
-            ngbPopover="{{div.name}}">
-        </div>
-    </div>
-    <div class="row table-secondary">
-        <div class="col"><h1>E</h1></div>
-    </div>
-    <div class="row table-dark">
-        <div class ="col-auto" *ngFor="let div of getDivs(5)">
-            <img src="{{div.img}}" alt="{{div.name}}" width="50" height="50" placement="top" style="{{banStyle(div)}}"
-            ngbPopover="{{div.name}}">
+        <div class="col-6">
+            <div class="row table-secondary">
+                <div class="col"><h1>S</h1></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of getDivs(1)">
+                    <app-div-image [division]=div (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><h1>A</h1></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of getDivs(2)">
+                    <app-div-image [division]=div (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+            <div class="row table-secondary">
+                <div class="col"><h1>B</h1></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of getDivs(3)">
+                    <app-div-image [division]=div (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+            <div class="row table-secondary">
+                <div class="col"><h1>C</h1></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of getDivs(4)">
+                    <app-div-image [division]=div (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+            <div class="row table-secondary">
+                <div class="col"><h1>D</h1></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of getDivs(5)">
+                    <app-div-image [division]=div (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+            <div class="row table-secondary">
+                <div class="col"><h1>E</h1></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of getDivs(6)">
+                    <app-div-image [division]=div (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+        </div><div class="col">
+            <div class="row table-secondary">
+                <div class="col"><h1>Bans</h1></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of getDivs(0)">
+                    <app-div-image [division]=div [ban]=false (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+            <div class="row table-secondary">
+                <div class="col"><h3>Suggested Bans</h3></div>
+            </div>
+            <div class="row table-dark">
+                <div class ="col-auto" *ngFor="let div of banSuggustions">
+                    <app-div-image [division]=div [ban]=false (selected)="onSelect($event)"></app-div-image>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>Division</h1>
+                </div>
+                <div class="col" *ngIf="selected">
+                    <div *ngIf="!isBanned(selected)" class="col" >
+                        <button class="btn btn-danger" (click)="toggleBan(selected)">BAN</button>
+                    </div>
+                    <div *ngIf="isBanned(selected)" class="col" >
+                        <button class="btn btn-success" (click)="toggleBan(selected)">UN-BAN</button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="selected">
+                <b>{{selected.name}}</b><br/>
+                <h3>Type:</h3>{{selected.type}}<br/>
+                <h3>Faction:</h3>{{selected.faction}}<br/>
+                <h3>Notes:</h3>
+                <ul>
+                    <li *ngFor="let t of selected.tags">
+                        {{explainType(t)}}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

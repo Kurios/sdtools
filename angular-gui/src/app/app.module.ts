@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MessageComponent } from './message/message.component';
 import { TierlistComponent } from './tierlist/tierlist.component';
 import { appRoutingModule } from 'src/app.routing';
+import { DivImageComponent } from './div-image/div-image.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { appRoutingModule } from 'src/app.routing';
     AppComponent,
     ChatHistoryComponent,
     MessageComponent,
-    TierlistComponent
+    TierlistComponent,
+    DivImageComponent
   ],
   imports: [
     appRoutingModule,
