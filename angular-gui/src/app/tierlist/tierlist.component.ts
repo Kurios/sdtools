@@ -1,6 +1,8 @@
 
 import { ApplicationRef, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import * as _ from 'underscore';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 import {Division, Divisions} from '../../sd-common/sd2-divisions'
 @Component({
   selector: 'app-tierlist',
@@ -40,6 +42,13 @@ export class TierlistComponent implements OnInit {
 
   banSuggustions?:Division[];
 
+  search = (text$: Observable<string>) => text$.pipe(
+    debounceTime(200),
+    distinctUntilChanged(),
+    map(term => term == '' ? [] : this.divisions.divisions.filter(v => v.name.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1).slice(0,10)))
+
+  formatter = (x: {name: string}) => x.name;
+  
   suggustBan(count:number){
     let ret = [];
     for(let div of this.divisions.divisions){
