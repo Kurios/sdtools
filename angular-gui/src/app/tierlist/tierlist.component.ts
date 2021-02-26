@@ -3,7 +3,7 @@ import { ApplicationRef, ChangeDetectorRef, Component, Input, OnInit } from '@an
 import { Observable } from 'rxjs';
 import * as _ from 'underscore';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
-import {Division, Divisions} from '../../sd-common/sd2-divisions'
+import {Division, Divisions} from '../../../../sd-common/sd2-divisions'
 @Component({
   selector: 'app-tierlist',
   templateUrl: './tierlist.component.html',

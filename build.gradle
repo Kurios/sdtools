@@ -29,3 +29,20 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 */
+
+task copySDCommon(type: Copy){
+    copy { from('sd-common') {
+            include '*.ts'
+            include '*.js'
+        }
+        into 'angular-gui/src/sd-common'
+    }
+        copy { from('sd-common') {
+            include '*.ts'
+            include '*.js'
+        }
+        into 'express-backend/sd-common'
+    }
+}
+
+task build( dependsOn: ['copySDCommon'] )
