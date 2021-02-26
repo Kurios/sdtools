@@ -16,12 +16,13 @@ export class Divisions {
         {name:"wtank",desc:"This division has a massive anti-tank deficiency."},
         {name:"wwtank",desc:"This division wonders what a tank is."},
         {name:"fixedAT",desc:"There is a lack of fixed AT guns in this division."},
-        {name:"arty",desc:"This division is a firm believer in arty"}
+        {name:"arty",desc:"This division is a firm believer in arty"},
+        {name:"1000kg",desc:"Air units can lift over 1000kg of bombs"}
 ]
     divisions = [
         //allied
         {name:"2-ya Gvard. Tankovy Korpus", rating: 3, faction: "allied", type: "Armored", img: "assets/div/2gtc.png", tags: ["waa","air","offmap"]},
-        {name:"29-ya Tankovy Korpus", rating: 3.03, faction: "allied", type: "Armored", img: "assets/div/29tc.png", tags: ["waa","superheavy"]},
+        {name:"29-ya Tankovy Korpus", rating: 3.03, faction: "allied", type: "Armored", img: "assets/div/29tc.png", tags: ["waa","superheavy","500kg"]},
         {name:"3-ya Gvard. Mechanizi. Korpus", rating: 4.25, faction: "allied", type: "Mechanized", img: "assets/div/3gmc.png", tags: ["uber","offmap","waa","inf"]},
         {name:"3-ya Gvard. Tankovy Korpus", rating: 4.61, faction: "allied", type: "Armored", img: "assets/div/3gtc.png", tags: ["uber","superheavy","air"]},
         {name:"Podv. Gruppa Tyurina", rating: 2.25, faction: "allied", type: "Armored", img: "assets/div/Tyurina.png", tags: ["waa","air"]},
@@ -31,14 +32,14 @@ export class Divisions {
         {name:"44-ya Gvard. Strelkovy", rating: 2.62, faction: "allied", type: "Infantry", img: "assets/div/44g.png", tags: ["offmap","air"]},
         {name:"84-ya Gvard. Strelkovy", rating: 2.59, faction: "allied", type: "Mechanized", img: "assets/div/84g.png", tags: ["superheavy","offmap","air"]},
         {name:"184-ya Strelkovy", rating: 2.34, faction: "allied", type: "Infantry", img: "assets/div/184.png", tags: ["air","offmap"]},
-        {name:"3rd Armored", rating: 4.4, faction: "allied", type: "Armored", img: "assets/div/3armored.png", tags: ["superheavy","uber","inf","scoutcars","offmap"]},
+        {name:"3rd Armored", rating: 4.4, faction: "allied", type: "Armored", img: "assets/div/3armored.png", tags: ["superheavy","uber","inf","scoutcars","offmap","500kg"]},
         {name:"2e Blindee", rating: 3.64, faction: "allied", type: "Armored",img: "assets/div/2eblindee.png", tags: ["french"]},
         {name:"3rd Canadian Infantry", rating: 3.89, faction: "allied", type: "Mechanized", img: "assets/div/3can.png", tags: ["scoutcars","inf","air","waa"]},
         {name:"15th Infantry", rating: 3.46, faction: "allied", type: "Infantry", img: "assets/div/15inf.png", tags: ["superheavy","scoutcars","offmap","air"]},
         {name:"Armia Krajowa", rating: 0, faction: "allied", type:"Infantry", img: "assets/div/ak.png", tags:["underdog","inf"]},
         {name:"1 Piechoty", rating: 2.63, faction: "allied", type: "Mechanized", img: "assets/div/piechoty.png", tags: ["air","ccx","inf","cluster"]},
         {name:"126-y L. Gornostrelkovy Korpus", rating: 0, faction: "allied", type: "Infantry", img: "assets/div/126light.png", tags: ["air","waa","wtank",
-    "fixedAT","offmap"]},
+    "fixedAT","offmap","500kg"]},
         {name:"Podv. Gruppa Vyborg", rating: 2.5, faction: "allied", type: "Armoured", img: "assets/div/vyborg.png", tags: ["superheavy","waa","offmap","air"]},
         {name:"358-ya Strelkova Div", rating: 0, faction: "allied", type: "Infantry", img: "assets/div/358ya.png", tags: ["ccx","waa","air","cluster"]},
         {name:"3-ya VDV", rating: 2.1, faction: "allied", type: "Infantry", img: "assets/div/3yaVDV.png", tags: ["ccx","waa","air"]},
@@ -51,7 +52,7 @@ export class Divisions {
         {name:"10-y Gv. Tank. Korpus", rating: 3.32, faction: "allied", type: "Armored", img: "assets/div/10gtc.png", tags: ["waa","air"]},
         {name:"2nd New-Zealand", rating: 0, faction: "allied", type: "Infantry", img: "assets/div/2nz.png", tags: ["scoutcars"]},
         //axis
-        {name:"3. Fallschirmjäger", rating: 2.88, faction: "axis", type: "Infantry", img: "assets/div/3fs.png", tags: []},
+        {name:"3. Fallschirmjäger", rating: 2.88, faction: "axis", type: "Infantry", img: "assets/div/3fs.png", tags: ["inf","air"]},
         {name:"17. SS-Panzergrenadier", rating: 3.35, faction: "axis", type: "Mechanized", img: "assets/div/17ss.png", tags: ["waa"]},
         {name:"1. Skijäger", rating: 0, faction: "axis", type: "Mechanized", img: "assets/div/skijager.png", tags: ["waa","offmap","air"]},
         {name:"5. Panzer", rating: 3.13, faction: "axis", type: "Armored", img: "assets/div/5panzer.png", tags: ["scoutcars","offmap"]},
@@ -70,7 +71,7 @@ export class Divisions {
         {name:"352. Infanterie", rating: 0, faction: "axis", type: "Infantry", img: "assets/div/352inf.png", tags: ["wwtank","scoutcars","offmap","air"]},
         {name:"5. SS-Panzer\"Wiking\"", rating: 2.66, faction: "axis", type: "Armored", img: "assets/div/wiking.png", tags: []},
         {name:"Fallschirm-Panzer \"Hermann Göring\"", rating: 3.26, faction: "axis", type: "Armored", img: "assets/div/fallschirmpanzer.png", tags: ["scoutcars","offmap","clusterbomb",]},
-        {name:"Panssaridivisioona", rating: 2.82, faction: "axis", type: "Armored", img: "assets/div/Panssaridivisioona.png", tags: ["inf","offmap","cluster","air"]},
+        {name:"Panssaridivisioona", rating: 2.82, faction: "axis", type: "Armored", img: "assets/div/Panssaridivisioona.png", tags: ["500kg","inf","offmap","cluster","air"]},
         {name:"Ryhmä Raappana", rating: 0, faction: "axis", type: "Infantry", img: "assets/div/ryhma.png", tags: ["inf","wwtank","offmap","air","arty"]},
         {name:"122. Infanterie", rating: 2.07, faction: "axis", type: "Infantry", img: "assets/div/122inf.png", tags: ["waa","air","inf","wtank"]},
         {name:"1 Blindata", rating: 3.76, faction: "axis", type: "Armored", img: "assets/div/blindata.png", tags: ["scoutcars","offmap","cluster","air"]},
