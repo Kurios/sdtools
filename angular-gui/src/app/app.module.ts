@@ -9,6 +9,7 @@ import { MessageComponent } from './message/message.component';
 import { TierlistComponent } from './tierlist/tierlist.component';
 import { appRoutingModule } from 'src/app.routing';
 import { DivImageComponent } from './div-image/div-image.component';
+import { DirectoryComponent } from './directory/directory.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DivImageComponent } from './div-image/div-image.component';
     ChatHistoryComponent,
     MessageComponent,
     TierlistComponent,
-    DivImageComponent
+    DivImageComponent,
+    DirectoryComponent
   ],
   imports: [
     appRoutingModule,

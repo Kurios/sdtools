@@ -1,11 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ChatHistoryComponent } from './app/chat-history/chat-history.component';
+import { DirectoryComponent } from './app/directory/directory.component';
 import { TierlistComponent } from './app/tierlist/tierlist.component';
 
 
 
 const routes: Routes = [
-    { path: '', component: ChatHistoryComponent },
+    { path: '', component: DirectoryComponent},
+    { path: 'chat', component: ChatHistoryComponent },
     { path: 'tierlist', component: TierlistComponent },
 
     // otherwise redirect to home
