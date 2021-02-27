@@ -10,7 +10,7 @@ export class DivImageComponent implements AfterViewInit {
 
   context?: CanvasRenderingContext2D;
   @ViewChild( 'myCanvas' ) canvas?: ElementRef;
-  @Input() division: Division = {name:"ERR","rating":-1,"faction":"allied","type":"infantry","tags":[],"img":"assets/div/x.jpg"};
+  @Input() division: Division = {name:"ERR","rating":-1,"faction":"allied","type":"infantry","tags":[],"img":"assets/div/x.jpg", id:-1};
   @Input() size = 60;
   @Input() ban = true;
   @Output() selected:EventEmitter<Division> = new EventEmitter<Division>();

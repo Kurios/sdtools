@@ -10,6 +10,7 @@ import { TierlistComponent } from './tierlist/tierlist.component';
 import { appRoutingModule } from 'src/app.routing';
 import { DivImageComponent } from './div-image/div-image.component';
 import { DirectoryComponent } from './directory/directory.component';
+import { MapExplorerComponent } from './map-explorer/map-explorer.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DirectoryComponent } from './directory/directory.component';
     MessageComponent,
     TierlistComponent,
     DivImageComponent,
-    DirectoryComponent
+    DirectoryComponent,
+    MapExplorerComponent
   ],
   imports: [
     appRoutingModule,

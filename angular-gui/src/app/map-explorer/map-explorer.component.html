@@ -1,0 +1,24 @@
+<h1>1v1 Map Explorer</h1>
+<div class="container col-lg-">
+    <div class="row">
+        <div class="col-small mr-auto">
+            <div *ngFor="let map of maps">
+                <button type="button" class="btn btn-outline-primary btn-block" (click)="setMap(map)" width=200>{{map.name}}</button>
+            </div>
+        </div><div class="col-md-6">
+            <div class="row" *ngIf="selected">
+                <b><i>{{selected.name}}</i></b>
+            </div>
+            <div class="row" *ngIf="selected">
+                <img src="{{checkVersion(selected.img)}}" width=800>
+                <button class="btn btn-outline-secondary btn-block" (click)="newMap = !newMap">Switch Map</button>
+            </div>
+            <div class="row" *ngIf="selected">
+                <b>Notes:</b><br/>
+                <ul>
+                    <li *ngFor="let item of selected.tags">{{getDesc(item)}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
