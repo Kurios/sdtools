@@ -19,6 +19,12 @@
                     <li *ngFor="let item of selected.tags">{{getDesc(item)}}</li>
                 </ul>
             </div>
+            <div class="row" *ngIf="selected">
+                <b>Share:</b><br/>
+                <ul>
+                    <input type="text" value="{{shareURL}}" size = 60/>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

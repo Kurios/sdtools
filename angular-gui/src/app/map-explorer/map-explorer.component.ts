@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Maps, Map } from 'src/sd-common/sd2-maps';
 
 @Component({
@@ -8,9 +9,11 @@ import { Maps, Map } from 'src/sd-common/sd2-maps';
 })
 export class MapExplorerComponent implements OnInit {
 
-  constructor() { 
+  constructor(private route: ActivatedRoute) { 
     this.mapObject = new Maps();
     this.maps = this.mapObject.maplist;
+    
+
   }
 
   getDesc(tag:string){
@@ -19,6 +22,8 @@ export class MapExplorerComponent implements OnInit {
 
   setMap(map:Map){
     this.selected = map;
+    window.history.replaceState(window.location.origin + "/maps?map=" + encodeURI(map.name),"Map Viewer: map.name");
+    this.shareURL = window.location.origin + "/maps?map=" + encodeURI(map.name);
   }
 
   checkVersion(url:string){
@@ -33,8 +38,12 @@ export class MapExplorerComponent implements OnInit {
   maps:Map[];
   selected?:Map;
   newMap = true;
+  shareURL = "";
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.selected = this.maps.find((x)=>{return x.name ==params.map});
+    })
   }
 
 }
