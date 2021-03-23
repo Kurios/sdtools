@@ -2,10 +2,15 @@
   "name": "sd-common",
   "version": "1.0.0",
   "description": "private utils and shared classes between angular-gui and express-backend",
-  "main": "index.js",
+  "main": "division-util.test.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.14.35",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
 }

@@ -21,3 +21,6 @@
     <br/>
     <button class = "btn btn-primary" (click)="banSubmit()" >Submit</button>
 </div>
+<div class="form-group" *ngIf="message.hasStringInput">
+     <input ngbButton type="text" class="form-control" [readonly]=message.lock (change)="textboxFocusChange()" placeholder="{{message.inputBoxText}}" [(ngModel)]="message.text">
+</div>

@@ -45,6 +45,7 @@ export class ChatHistoryComponent implements OnInit {
   map: string = "";
   mapPool = ["Bobr", "Slusk", "Krupa"];
   divisionPool = ["-1 Panzer","21 Panzer", "22 Panzer", "23 Panzer", "24 Panzer", "25 Panzer", "Russian Panzer", "American Panzer", "Waifu Panzer", "Hitler's Panzer", "Eva Braun Panzer", "Skypanzer", "1st Panzer", "12th Panzer", "Panzerfaust", "Bombepanzer", "Schrödinger's Panzer"];
+  
   fakeDialog(){
     console.log("Bot is checking messages for "+ this.username)
     switch (this.dialogState){

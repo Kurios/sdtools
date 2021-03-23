@@ -21,6 +21,11 @@ export class BaseMessage {
     banValues : {"name":string, "selected": boolean}[] = [];
     banSubmit = false;
     banCount = 0;
+    text?:string;
+    hasStringInput = false;
+    inputBoxText?:string;
+    event?:(x:BaseMessage)=>void;
+
 
     lock = false;
 
@@ -41,6 +46,7 @@ export class BaseMessage {
         this.hasBanPick = true;
         this.banCount = c;
     }
+    
 
 }
 

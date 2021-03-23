@@ -11,6 +11,8 @@ import { appRoutingModule } from 'src/app.routing';
 import { DivImageComponent } from './div-image/div-image.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { MapExplorerComponent } from './map-explorer/map-explorer.component';
+import { PickBanComponent } from './pick-ban/pick-ban.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,13 +23,15 @@ import { MapExplorerComponent } from './map-explorer/map-explorer.component';
     TierlistComponent,
     DivImageComponent,
     DirectoryComponent,
-    MapExplorerComponent
+    MapExplorerComponent,
+    PickBanComponent
   ],
   imports: [
     appRoutingModule,
     BrowserModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

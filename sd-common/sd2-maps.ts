@@ -1,4 +1,4 @@
-export interface Map {
+export interface SDMap {
     name:string,
     id:number,
     img:string,
@@ -17,7 +17,7 @@ export class Maps {
         {"name":"lakes", desc:"Scattered Lakes dominate parts of this map"},
         {"name":"hill", desc: "A central hill dominates this map"}
 ]
-    public maplist:Map[] = [
+    public maplist:SDMap[] = [
         {name:"Bobr", id:1 , img:"assets/map/bobr.jpg", tags: ["river"], size:[1]},
         {name:"Brest, west", id: 2, img:"assets/map/brestW.jpg", tags: ["riverVert"], size:[1]},
         {name:"Haroshaje", id: 3, img:"assets/map/haroshaje.jpg", tags: ["river"], size:[1]},

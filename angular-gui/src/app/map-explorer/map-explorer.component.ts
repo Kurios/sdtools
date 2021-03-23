@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Maps, Map } from 'src/sd-common/sd2-maps';
+import { Maps, SDMap } from 'src/sd-common/sd2-maps';
 
 @Component({
   selector: 'app-map-explorer',
@@ -20,7 +20,7 @@ export class MapExplorerComponent implements OnInit {
     return this.mapObject.tags.find((x)=>{return x.name == tag})?.desc;
   }
 
-  setMap(map:Map){
+  setMap(map:SDMap){
     this.selected = map;
     window.history.replaceState(window.location.origin + "/maps?map=" + encodeURI(map.name),"Map Viewer: map.name");
     this.shareURL = window.location.origin + "/maps?map=" + encodeURI(map.name);
@@ -35,8 +35,8 @@ export class MapExplorerComponent implements OnInit {
   }
 
   mapObject:Maps;
-  maps:Map[];
-  selected?:Map;
+  maps:SDMap[];
+  selected?:SDMap;
   newMap = true;
   shareURL = "";
 
